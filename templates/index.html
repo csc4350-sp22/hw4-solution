@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/styles.css"/>
+    </head>
+    <body>
+        <h1>John's Favorite Shows</h1>
+            <ol>
+                {%for i in range(0, length)%}
+                    <div style="display:grid; grid-template-columns:1fr 1fr; column-gap:400px;">
+                        <div style="grid-column:1">
+                            {%if shows[i] == "Haikyuu"%}
+                                <li class="favorite">{{shows[i]}}</li>
+                            {%else%}
+                                <li>{{shows[i]}}</li>
+                            {%endif%}
+                        </div>
+                        <div style="grid-column:2">
+                            <img src={{images[i]}} width=400 height=400/>
+                        </div>
+                    </div>
+                {%endfor%} 
+            </ol>
+    </body>
+</html>
